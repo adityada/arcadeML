@@ -8,6 +8,7 @@ let input = [];
 let hidden = [];
 
 let bird;
+let playerBird;
 
 let brainJSON;
 let network;
@@ -24,6 +25,7 @@ function setup() {
   createCanvas(400, 600);
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
   bird = new Bird(birdBrain);
+  playerBird = new PlayerBird();
   network = new Network(width/2, 0)
 
   textFont(font)
@@ -80,6 +82,9 @@ function draw() {
       if(pipes[i].hits(bird)) {
           console.log("OOF!"); 
         }
+      if(pipes[i].hits(playerBird)) {
+        playerBird.dead = true;
+      }
       if(pipes[i].offscreen()) {
         pipes.splice(i, 1);
       }
@@ -87,12 +92,14 @@ function draw() {
     
     bird.think(pipes);
     bird.update();
+    playerBird.update();
   
   
 
   background(0);
 
   bird.show();
+  playerBird.show();
 
   for(let pipe of pipes) {
     pipe.show();
@@ -123,4 +130,11 @@ function draw() {
  
     }
   
+}
+
+function keyPressed() {
+  if(keyCode == 32) {
+    playerBird.up();
+    console.log("Pressed")
+  }
 }
