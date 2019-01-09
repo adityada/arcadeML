@@ -8,10 +8,70 @@
     <script src="bird.js"></script>
     <script src="pipes.js"></script>
     <script src="geneticAlg.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </head>
   <body>
+      <br>
+      <script src="sketch.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            <div id="sketch-holder">  
+           </div>      
+        </div>
+        <div class="col-md">
+        <div class="card">
+            <div class="card-header">
+              How It Works
+            </div>
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <p>Control the training speed: </p>
+                  </div>
+                  <div class="col-sm">
+                      <div id="slider-holder"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <p>Download brain of 0th bird: </p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="brainDownload-holder"></div>
+                  </div>
+                </div>
+              </div>
+              <h5 class="card-title">Reinforcement Learning</h5>
+              <p class="card-text">Reinforcement Learning is a more goal-oriented approach to Neural Networks, involving an agent with the ability to choose the appropriate action, in a certain environment of a certain state. A succesful agent will be rewarded. In this case, the agent is the flappy birds flying about the screen, and the environment are the pipes.</p>
+              <h5 class="card-title">Genetic Algorithm & Neuro-Evolution</h5>
+              <p class="card-text">Think of a genetic algorithm as the theory of evolution. We have a <strong>varied population</strong> of 350 birds which, at first, will not last very long at the environment. Per the laws of natural selection, we need to pick the best performers. Since the population is varied, some birds will perform better than others. This performance is calculated by assigning a <strong>fitness</strong> score to each bird. Birds who last for more time will have a higher fitness, and will be picked to continue on to the next generation.</p>
+              <p class="card-text"><h6>Genetic Mutation</h3></p>
+              <p class="card-text">If we only pick the best performer for the next generation, then every bird of this new generation will have the same brain. Thus, we implement mutation. The algorithms for mutation varies, but the one I implemented goes as follows:</p>
+              <ol>
+                <li><p class="card-text">Pick a random number between 0 and 1. If the number is below than 0.1: </p></li>
+                <ol>
+                  <li><p class="card-text">Select a random gaussian number and multiply it by 0.5 as an offset.</p></li>
+                  <li><p class="card-text">Add this offset to the weights of the synapses and the biases of the neurons.</p></li>
+                </ol>
+                <li><p class="card-text">Else, do nothing.</p></li>
+              </ol>
+              <p class="card-text">With this implementation, there is a 10% chance for any given bird to mutate, meaning with a population of 350 birds, around 35 birds will mutate. Given enough time, we will be able to find the perfect combination of weights and biases.</p>
+              <p class="card-text"><h6>The Brain</h6></p>
+              <p class="card-text">To see what the brain of a our bird looks like, click the Download button above. The file contains the weights and biases of the bird's brain, which will be different for every bird. Try running this program for a while, and see the different weights and biases!</p>
+              <p><a href="../../portal/flappybirdMLDemo.html">Go back to portal.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <script src="sketch.js"></script>
+        
+    </div>
 
   </body>
 </html>

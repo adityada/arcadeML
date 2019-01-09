@@ -3,6 +3,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script src="neuron.js"></script>
     <script src="connection.js"></script>
     <script src="network.js"></script>
@@ -10,10 +15,37 @@
     <script src="nn.js"></script>
     <script src="bird.js"></script>
     <script src="pipes.js"></script>
+
+
   </head>
   <body>
-    <div>
+    <br>
       <script src="sketch.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            <div id="sketch-holder">  
+           </div>      
+        </div>
+        <div class="col-md">
+        <div class="card">
+            <div class="card-header">
+              How It Works
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Neural Network Model</h5>
+              <p class="card-text">As seen from the demonstration on the left, this particular neural network has five inputs: the y-position of the bird, the top y-position of the closest pipe, the bottom y-position of the closest pipe, and the velocity of the bird. This is a simpler implementation of reinforcement learning as it has access to its environment's variables - while most deep reinforcement agents nowadays use pixels as inputs, like Google's DeepMind StarCraft AI. Furthermore, it has eight hidden layers. This number is arbitrary, a result of countless tinkering and trial-and-error. The output has merely one layer, meaning it decides whether to jump or not.</p>
+              <h5 class="card-title">How it Learned</h5>
+              <p class="card-text">The learning process involves the use of Genetic Algorithms and Neural Evolution. For a more comprehensive explanation, go to the <a href="../TRAINflappybirdML/index.html">Train Your Own Flappy Bird AI</a> page.</p>
+              <h5 class="card-title">Resources Used</h5>
+              <p class="card-text">Credit for game mechanics, and Neural Network design goes to <a href="https://www.youtube.com/user/shiffman">The Coding Train</a>, run by NYU professor Daniel Shiffman. Dan's <a href="https://github.com/CodingTrain/Toy-Neural-Network-JS/tree/master/lib">Toy Neural Network Library</a> was also used as a framework. His book, <a href="https://natureofcode.com/book/">Nature Of Code</a>, is a requirement in order to understand the Genetic Algorithm & Neural Network implemented here.</p>
+              <p><a href="../../portal/flappybirdMLDemo.html">Go back to portal.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
     </div>
 
 

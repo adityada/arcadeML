@@ -21,7 +21,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 600);
+  var canvas = createCanvas(400, 600);
+  canvas.parent('sketch-holder');
+
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
   bird = new Bird(birdBrain);
   network = new Network(width/2, 0)

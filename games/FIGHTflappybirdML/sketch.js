@@ -21,8 +21,12 @@ function preload() {
   font = loadFont('DejaVuSans.ttf')
 }
 
+
+
 function setup() {
-  createCanvas(400, 600);
+  var canvas = createCanvas(400, 600);
+  canvas.parent('sketch-holder');
+
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
   bird = new Bird(birdBrain);
   playerBird = new PlayerBird();
@@ -135,6 +139,8 @@ function draw() {
 function keyPressed() {
   if(keyCode == 32) {
     playerBird.up();
-    console.log("Pressed")
+  }
+  if(keyCode == 82) {
+    location.reload();
   }
 }

@@ -7,23 +7,25 @@ var data = []
 let counter = 0;
 let slider;
 
-function keyPressed() {
-  if(key == 'S') {
-    let b = birds[0];
-    saveJSON(b.brain, 'bestBird.json');
-  }
-}
+
 
 function setup() {
-  createCanvas(400, 600);
+  var canvas = createCanvas(400, 600);
+  canvas.parent('sketch-holder')
   slider = createSlider(1, 100, 1)
+  slider.parent('slider-holder')
+  var brainDownloadButton = createButton('Download')
+  brainDownloadButton.mouseReleased(saveBrain)
+  brainDownloadButton.parent('brainDownload-holder')
   for(let i = 0; i < TOTAL_POPULATION; i++) {
     birds[i] = new Bird();
   }
 }
-
+function saveBrain() {
+  let b = birds[0];
+  saveJSON(b.brain, 'bestBird.json');
+}
 function draw() {
-
   for(let n = 0; n < slider.value(); n++) {
     if(counter % 80 == 0) {
       pipes.push(new Pipe())

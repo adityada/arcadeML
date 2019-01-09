@@ -60,7 +60,7 @@ class Bird {
         this.inputs[4] = this.velocity;
 
         let outputs = this.brain.predict(this.inputs);
-        if(outputs[0] > outputs[1] && this.velocity >= 0) {
+        if(outputs[0] > 0.5 && this.velocity >= 0) {
             this.up();
         }
     }
