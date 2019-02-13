@@ -13,6 +13,10 @@ let playerBird;
 let brainJSON;
 let network;
 
+let r = random(255)
+let g = random(255)
+let b = random(255)
+
 let font, 
   fontSize = 12;
 
@@ -103,7 +107,7 @@ function draw() {
   
   
 
-  background(0);
+  background(r,g,b);
 
   bird.show();
   playerBird.show();
