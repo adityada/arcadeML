@@ -13,9 +13,6 @@ let playerBird;
 let brainJSON;
 let network;
 
-let r = random(255)
-let g = random(255)
-let b = random(255)
 
 let font, 
   fontSize = 12;
@@ -30,6 +27,10 @@ function preload() {
 function setup() {
   var canvas = createCanvas(400, 600);
   canvas.parent('sketch-holder');
+
+  let r = random(255)
+  let g = random(255)
+  let b = random(255)
 
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
   
