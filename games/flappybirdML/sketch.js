@@ -14,6 +14,7 @@ let network;
 
 let font;
 let fontSize = 12;
+let r,g,b
 
 function preload() {
   brainJSON = loadJSON("bestBird.json");
@@ -23,9 +24,9 @@ function preload() {
 function setup() {
   var canvas = createCanvas(400, 600);
   canvas.parent('sketch-holder');
-  let r = random(255)
-  let g = random(255)
-  let b = random(255)
+  r = random(255)
+  g = random(255)
+  b = random(255)
 
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
   img = loadImage('../../images/eaglePlayer.png'); // Load the image
