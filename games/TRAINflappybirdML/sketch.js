@@ -7,8 +7,9 @@ var data = []
 let counter = 0;
 let slider;
 
-let r,g,b
-  let images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
+let r,g,b;
+
+let images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
 
 
 
@@ -21,7 +22,7 @@ function setup() {
   brainDownloadButton.mouseReleased(saveBrain)
   brainDownloadButton.parent('brainDownload-holder')
   for(let i = 0; i < TOTAL_POPULATION; i++) {
-    let sprite = loadImage(images[Math.floor(Math.random * images.length)]);
+    var sprite = loadImage(images[Math.floor(Math.random * images.length)]);
     birds[i] = new Bird("null", sprite);
   }
   r = random(255)
