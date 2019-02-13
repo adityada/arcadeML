@@ -28,8 +28,11 @@ function setup() {
   canvas.parent('sketch-holder');
 
   let birdBrain = NeuralNetwork.deserialize(brainJSON);
-  bird = new Bird(birdBrain);
-  playerBird = new PlayerBird();
+  
+  let playerBirdSprite = loadImage('../../images/eaglePlayer.png');
+  let oppBirdSprite = loadImage('../../images/eagleGreen.png');
+  bird = new Bird(birdBrain, oppBirdSprite);
+  playerBird = new PlayerBird(playerBirdSprite);
   network = new Network(width/2, 0)
 
   textFont(font)
