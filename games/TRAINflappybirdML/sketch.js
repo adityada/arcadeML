@@ -19,7 +19,7 @@ function setup() {
   brainDownloadButton.mouseReleased(saveBrain)
   brainDownloadButton.parent('brainDownload-holder')
   for(let i = 0; i < TOTAL_POPULATION; i++) {
-    let sprite = loadImage(images[Math.floor(Math.random * images.length)];
+    let sprite = loadImage(images[Math.floor(Math.random * images.length)]);
     birds[i] = new Bird("null", sprite);
   }
   let r = random(255)
