@@ -10,7 +10,9 @@ function Pipe() {
     this.width = 65;
     this.speed = 3;
     
-    this.r, this.g, this.b = random(255), random(255), random(255)
+    this.r = random(255)
+    this.g = random(255)
+    this.b = random(255)
 
     this.show = function() {
         fill(this.r, this.g, this.b);
