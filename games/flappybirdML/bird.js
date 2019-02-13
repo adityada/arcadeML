@@ -1,5 +1,5 @@
 class Bird {
-    constructor(brain) {
+    constructor(brain, sprite) {
         this.y = height/2;
         this.x = width/4;
     
@@ -13,13 +13,15 @@ class Bird {
         this.fitness = 0;
         this.brain = brain;
         this.inputs = []
+        
+        this.sprite = sprite
     }
 
 
     show() {
         fill(255, 50)
         stroke(255)
-        ellipse(this.x, this.y, 40, 40)
+        image(this.sprite, this.x, this.y)
     }
 
     up() {
