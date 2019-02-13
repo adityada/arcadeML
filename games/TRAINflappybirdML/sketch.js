@@ -13,12 +13,14 @@ function setup() {
   var canvas = createCanvas(400, 600);
   canvas.parent('sketch-holder')
   slider = createSlider(1, 100, 1)
+  var images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
   slider.parent('slider-holder')
   var brainDownloadButton = createButton('Download')
   brainDownloadButton.mouseReleased(saveBrain)
   brainDownloadButton.parent('brainDownload-holder')
   for(let i = 0; i < TOTAL_POPULATION; i++) {
-    birds[i] = new Bird();
+    let sprite = loadImage(images[Math.floor(Math.random * images.length)];
+    birds[i] = new Bird(sprite);
   }
 }
 function saveBrain() {
