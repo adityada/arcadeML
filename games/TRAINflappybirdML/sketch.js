@@ -8,6 +8,7 @@ let counter = 0;
 let slider;
 
 let r,g,b
+  let images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
 
 
 
@@ -15,7 +16,6 @@ function setup() {
   var canvas = createCanvas(400, 600);
   canvas.parent('sketch-holder')
   slider = createSlider(1, 100, 1)
-  let images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
   slider.parent('slider-holder')
   var brainDownloadButton = createButton('Download')
   brainDownloadButton.mouseReleased(saveBrain)
