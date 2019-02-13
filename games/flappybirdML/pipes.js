@@ -9,9 +9,11 @@ function Pipe() {
     this.x = width;
     this.width = 65;
     this.speed = 3;
+    
+    this.r, this.g, this.b = random(255), random(255), random(255)
 
     this.show = function() {
-        fill(random(255), random(255), random(255));
+        fill(r, g, b);
         rect(this.x, 0, this.width, this.top)
         rect(this.x, height - this.bottom, this.width, this.bottom)
     }
