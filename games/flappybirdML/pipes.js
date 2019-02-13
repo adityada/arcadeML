@@ -13,7 +13,7 @@ function Pipe() {
     this.r, this.g, this.b = random(255), random(255), random(255)
 
     this.show = function() {
-        fill(r, g, b);
+        fill(this.r, this.g, this.b);
         rect(this.x, 0, this.width, this.top)
         rect(this.x, height - this.bottom, this.width, this.bottom)
     }
