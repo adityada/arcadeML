@@ -9,7 +9,7 @@ function mutate(x) {
 }
 
 class Bird {
-    constructor(brain) {
+    constructor(brain, sprite) {
         this.y = height/2;
         this.x = width/4;
     
@@ -21,6 +21,8 @@ class Bird {
     
         this.score = 0;
         this.fitness = 0;
+        this.sprite = sprite;
+        
         if(brain instanceof NeuralNetwork) {
             this.brain = brain.copy();
             this.brain.mutate(mutate);
@@ -33,7 +35,7 @@ class Bird {
     show() {
         fill(255, 50)
         stroke(255)
-        ellipse(this.x, this.y, 40, 40)
+        image(this.sprite, this.x, this.y, this.sprite.width * 1.1, this.sprite.height * 1.1)
     }
 
     up() {
