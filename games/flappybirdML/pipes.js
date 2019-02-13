@@ -11,7 +11,7 @@ function Pipe() {
     this.speed = 3;
 
     this.show = function() {
-        fill(255);
+        fill(random(255), random(255), random(255));
         rect(this.x, 0, this.width, this.top)
         rect(this.x, height - this.bottom, this.width, this.bottom)
     }
