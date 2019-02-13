@@ -1,7 +1,7 @@
 
 
 class PlayerBird {
-    constructor() {
+    constructor(sprite) {
         this.y = height/3;
         this.x = width/3;
     
@@ -11,6 +11,7 @@ class PlayerBird {
         this.airResistance = 0.9;
         this.jump = false;
         this.dead = false;
+        this.sprite = sprite
 
     }
 
@@ -18,7 +19,7 @@ class PlayerBird {
     show() {
         if(!this.dead) {
             fill(0, 255, 255)
-            ellipse(this.x, this.y, 40, 40)
+            image(this.sprite, this.x, this.y, this.sprite.height * 1.2, this.sprite.width * 1.2)
         }
     }
 
