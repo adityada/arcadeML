@@ -21,7 +21,7 @@ class Bird {
     show() {
         fill(255, 50)
         stroke(255)
-        image(this.sprite, this.x, this.y, this.sprite.width * 1,2, this.sprite.height * 1.2)
+        image(this.sprite, this.x, this.y, this.sprite.width * 1.2, this.sprite.height * 1.2)
     }
 
     up() {
