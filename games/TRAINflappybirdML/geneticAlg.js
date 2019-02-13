@@ -22,7 +22,7 @@ function getBirdByHighestFitness() {
     }
     let images = ["../../images/eaglePlayer.png","../../images/eagleGreen.png","../../images/eaglePurple.png"]
     let sprite = loadImage(images[Math.floor(Math.random() * images.length)]);
-    let child = new Bird(largest.brain);
+    let child = new Bird(largest.brain, sprite);
     return child;
 }
 
